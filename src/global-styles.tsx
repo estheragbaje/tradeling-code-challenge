@@ -7,7 +7,6 @@ const tablet = '@media(max-width: 768px)'
 export const cardStyle = css({
   backgroundColor: '#white',
   padding: '20px',
-  // maxWidth: '340px',
   [tablet]: {
     minWidth: '230px',
   },
@@ -57,4 +56,16 @@ export const gridStyle = css({
   padding: '24px 48px',
   gridRowGap: '30px',
   gridTemplateColumns: 'auto auto auto',
+  [tablet]: {
+    gridTemplateColumns: 'auto auto',
+    padding: '16px',
+    gridColumnGap: '16px',
+    gridRowGap: '16px',
+  },
+  [mobile]: {
+    gridTemplateColumns: 'auto',
+    padding: '10px',
+    gridColumnGap: '10px',
+    gridRowGap: '10px',
+  },
 })
