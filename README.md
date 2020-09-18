@@ -32,10 +32,6 @@ In the project directory, you can run:
 
 - `yarn test` - launches the test runner in the interactive watch mode.
 
-## Redux configuration
-
-The template provides basic Redux configuration with [feature based](https://redux.js.org/style-guide/style-guide/#structure-files-as-feature-folders-or-ducks) folder structure.
-
 ## Testing
 
 Testing is done with ....
