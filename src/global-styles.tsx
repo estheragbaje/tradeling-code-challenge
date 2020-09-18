@@ -1,8 +1,17 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { jsx, css, keyframes } from '@emotion/core'
 
 const mobile = '@media(max-width: 460px)'
 const tablet = '@media(max-width: 768px)'
+
+const shimmer = keyframes({
+  '0%': {
+    backgroundPosition: '-1000px 0',
+  },
+  '100%': {
+    backgroundPosition: '1000px 0',
+  },
+})
 
 export const cardStyle = css({
   backgroundColor: '#white',
@@ -129,5 +138,11 @@ export const skeletonStyles = css({
     width: '100%',
     marginTop: '20px',
     backgroundColor: '#EDF2F7',
+  },
+  '.animate': {
+    animation: `${shimmer} 2s infinite`,
+    background:
+      'linear-gradient(to right, #EDF2F7 4%, #E2E8F0 25%, #EDF2F7 36%)',
+    backgroundSize: '1000px 100%',
   },
 })
