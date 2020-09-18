@@ -69,3 +69,20 @@ export const gridStyle = css({
     gridRowGap: '10px',
   },
 })
+
+export const containerStyle = css({
+  padding: '24px 48px',
+})
+
+export const headlineStyle = css({
+  fontSize: '28px',
+  margin: '5px 0px',
+  fontWeight: 500,
+  color: '#28A745',
+  [tablet]: {
+    fontSize: '24px',
+  },
+  [mobile]: {
+    fontSize: '18px',
+  },
+})
