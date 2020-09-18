@@ -4,7 +4,7 @@ import React from 'react'
 import { LocationIcon, TwitterIcon } from '../icons'
 import { cardStyle, flexStyle, textStyle, headingStyle } from '../global-styles'
 
-interface GithubUser {
+export interface GithubUser {
   avatar_url: string
   login: string
   name: string

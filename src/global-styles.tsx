@@ -50,3 +50,11 @@ export const aStyle = css({
     color: '#095BCB',
   },
 })
+
+export const gridStyle = css({
+  display: 'grid',
+  gridColumnGap: '30px',
+  padding: '24px 48px',
+  gridRowGap: '30px',
+  gridTemplateColumns: 'auto auto auto',
+})
