@@ -3,9 +3,10 @@ import { jsx, css } from '@emotion/core'
 import React from 'react'
 import { Navbar } from './components/nav-bar'
 import { UserList } from './components/user-list'
-import { containerStyle, headlineStyle } from './global-styles'
+import { containerStyle, headlineStyle, errorStyle } from './global-styles'
 import { users } from './data'
 import { Search } from './components/search'
+import { ErrorIcon } from './icons'
 
 const App: React.FC = () => (
   <div>
@@ -15,6 +16,10 @@ const App: React.FC = () => (
       <Search />
     </div>
     <UserList data={users} />
+    <div css={errorStyle}>
+      <ErrorIcon className="error-icon" />
+      <p className="error-text">Error fetching data</p>
+    </div>
   </div>
 )
 

@@ -86,3 +86,18 @@ export const headlineStyle = css({
     fontSize: '18px',
   },
 })
+
+export const errorStyle = css(flexStyle, {
+  color: '#721c24',
+  backgroundColor: '#f8d7da',
+  borderColor: '#f5c6cb',
+  padding: 12,
+  margin: 48,
+  '.error-icon': {
+    width: 24,
+  },
+  '.error-text': {
+    fontSize: 16,
+    paddingLeft: 10,
+  },
+})
