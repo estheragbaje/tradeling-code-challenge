@@ -7,6 +7,7 @@ import { containerStyle, headlineStyle, errorStyle } from './global-styles'
 import { users } from './data'
 import { Search } from './components/search'
 import { ErrorIcon } from './icons'
+import { SkeletonList } from './components/skeleton-list'
 
 const App: React.FC = () => (
   <div>
@@ -20,6 +21,7 @@ const App: React.FC = () => (
       <ErrorIcon className="error-icon" />
       <p className="error-text">Error fetching data</p>
     </div>
+    <SkeletonList />
   </div>
 )
 

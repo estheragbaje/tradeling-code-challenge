@@ -101,3 +101,33 @@ export const errorStyle = css(flexStyle, {
     paddingLeft: 10,
   },
 })
+
+export const skeletonStyles = css({
+  padding: 20,
+  backgroundColor: '#F7FAFC',
+  borderRadius: 5,
+  height: 160,
+  '.top-section': {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  '.image': {
+    width: 50,
+    height: 50,
+    borderRadius: 9999,
+    marginRight: 20,
+    backgroundColor: '#EDF2F7',
+    flexShrink: 0,
+  },
+  '.text': {
+    height: 24,
+    width: '100%',
+    backgroundColor: '#EDF2F7',
+  },
+  '.bottom-text': {
+    height: 70,
+    width: '100%',
+    marginTop: '20px',
+    backgroundColor: '#EDF2F7',
+  },
+})
