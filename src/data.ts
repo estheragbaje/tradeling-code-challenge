@@ -73,3 +73,5 @@ export const repo = {
   default_branch: 'master',
   score: 1.0,
 }
+
+export const repos = [repo, repo, repo]
