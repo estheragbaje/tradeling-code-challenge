@@ -1,13 +1,13 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import React from 'react'
 import { Navbar } from './components/nav-bar'
-import { UserList } from './components/user-list'
-import { containerStyle, headlineStyle, errorStyle } from './global-styles'
-import { users } from './data'
 import { Search } from './components/search'
-import { ErrorIcon } from './icons'
 import { SkeletonList } from './components/skeleton-list'
+import { UserList } from './components/user-list'
+import { users } from './data'
+import { containerStyle, errorStyle, headlineStyle } from './global-styles'
+import { ErrorIcon } from './icons'
 
 const App: React.FC = () => (
   <div>
