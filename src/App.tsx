@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import { jsx } from '@emotion/core'
+import './index.css'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navbar } from './components/nav-bar'
@@ -45,6 +46,7 @@ const App: React.FC = () => {
       ) : (
         <UserList data={result} />
       )}
+      {/* <UserList data={users} /> */}
     </div>
   )
 }

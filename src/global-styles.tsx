@@ -16,11 +16,15 @@ const shimmer = keyframes({
 export const cardStyle = css({
   backgroundColor: '#white',
   padding: '20px',
+  maxWidth: '350px',
+  minHeight: '240px',
   [tablet]: {
-    minWidth: '230px',
+    maxWidth: '230px',
+    // minHeight: '350px',
   },
   [mobile]: {
-    minWidth: '200px',
+    maxWidth: '200px',
+    // minHeight: '350px',
   },
   border: '1px solid #D9D9D9',
   borderRadius: '5px',
@@ -34,6 +38,7 @@ export const headingStyle = css({
   fontSize: '24px',
   margin: '0px ',
   fontWeight: 600,
+  maxWidth: '180px',
 })
 
 export const flexStyle = css({
@@ -62,7 +67,7 @@ export const aStyle = css({
 export const gridStyle = css({
   display: 'grid',
   gridColumnGap: '30px',
-  padding: '24px 48px',
+  padding: '30px 30px',
   gridRowGap: '30px',
   gridTemplateColumns: 'auto auto auto',
   [tablet]: {
@@ -144,5 +149,19 @@ export const skeletonStyles = css({
     background:
       'linear-gradient(to right, #EDF2F7 4%, #E2E8F0 25%, #EDF2F7 36%)',
     backgroundSize: '1000px 100%',
+  },
+})
+
+export const responsiveFlex = css({
+  display: 'flex',
+  alignItems: 'baseline',
+  justifyContent: 'space-between',
+  [tablet]: {
+    display: 'inline-block',
+    padding: '0px',
+  },
+  [mobile]: {
+    display: 'inline-block',
+    padding: '0px',
   },
 })
