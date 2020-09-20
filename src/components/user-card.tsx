@@ -31,7 +31,10 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => (
     >
       <a href={data.html_url}>
         <img
-          src="https://avatars3.githubusercontent.com/u/583231?v=4"
+          src={
+            data.avatar_url ||
+            'https://avatars3.githubusercontent.com/u/583231?v=4'
+          }
           alt={data.name}
           height="50px"
           style={{ borderRadius: '10000px' }}

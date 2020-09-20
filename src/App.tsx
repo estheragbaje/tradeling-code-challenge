@@ -24,12 +24,12 @@ const App: React.FC = () => {
         <Search />
       </div>
       <UserList data={result} />
-      <div css={errorStyle}>
+      {/* <div css={errorStyle}>
         <ErrorIcon className="error-icon" />
         <p className="error-text">Error fetching data</p>
       </div>
       <SkeletonList />
-      <RepoList data={result} />
+      <RepoList data={result} /> */}
     </div>
   )
 }

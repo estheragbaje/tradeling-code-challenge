@@ -1,8 +1,9 @@
 /**@jsx jsx */
 import { jsx } from '@emotion/core'
 import React from 'react'
+import debounce from 'lodash.debounce'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchByQuery, setType } from '../redux/reducer'
+import { fetchByQuery, setType, setQuery } from '../redux/reducer'
 import { RootState } from '../redux/store'
 
 export const Search: React.FC = () => {
@@ -20,20 +21,28 @@ export const Search: React.FC = () => {
     }
   }
 
+  const [inputValue, setInputValue] = React.useState('')
+
+  const debounceSearch = debounce((value: string) => {
+    dispatch(setQuery(value))
+    if (value.length > 2) {
+      search(value)
+    }
+  }, 250)
+
+  React.useEffect(() => {
+    debounceSearch(inputValue)
+  }, [inputValue])
+
   return (
     <div>
       <input
         type="text"
         placeholder="Start typing to search..."
         style={{ padding: '10px', fontSize: '16px' }}
-        value={searchQuery}
+        value={inputValue}
         onChange={(e) => {
-          const value = e.target.value
-          dispatch(setType(value))
-
-          if (searchQuery.length > 2) {
-            search(searchQuery)
-          }
+          setInputValue(e.target.value)
         }}
       />
       <select
