@@ -1,6 +1,7 @@
 import { Octokit } from '@octokit/rest'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
+import { RootState } from './store'
 
 const octokit = new Octokit()
 
@@ -13,9 +14,9 @@ const githubAPI = {
 }
 
 export const fetchByQuery = createAsyncThunk(
-  'users/fetchByQuery',
+  'query/fetchByQuery',
   async (query: string, thunkAPI) => {
-    const state = thunkAPI.getState()
+    const state = thunkAPI.getState() as RootState
 
     if (state.app.type === 'repo') {
       const response = await githubAPI.searchRepo(query)
