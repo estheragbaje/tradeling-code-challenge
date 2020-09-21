@@ -43,7 +43,7 @@ export const headingStyle = css({
 
 export const flexStyle = css({
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'baseline',
 })
 
 export const textStyle = css({

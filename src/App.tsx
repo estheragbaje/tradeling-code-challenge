@@ -40,13 +40,14 @@ const App: React.FC = () => {
         <p css={headlineStyle}>Search users or repositories below</p>
         <Search />
       </div>
-      <Status status={status} />
+      {/* <Status status={status} />
       {type === 'repo' ? (
         <RepoList data={result} />
       ) : (
         <UserList data={result} />
-      )}
+      )} */}
       {/* <UserList data={users} /> */}
+      <RepoList data={repos} />
     </div>
   )
 }

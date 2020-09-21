@@ -31,8 +31,8 @@ const iconTextStyle = css({
 const RepositoryCard: React.FC<RepoCardProps> = ({ data }) => (
   <div css={cardStyle}>
     <div>
-      <div css={flexStyle}>
-        <div css={flexStyle}>
+      <div>
+        <div style={{ display: 'flex', alignItems: 'baseline' }}>
           <RepoIcon height="20px" />
           <a href={data.html_url} style={{ textDecoration: 'none' }}>
             <p css={headingStyle} style={{ paddingLeft: '10px' }}>
@@ -40,11 +40,12 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ data }) => (
             </p>
           </a>
         </div>
-        <div css={iconTextStyle} style={{ paddingLeft: '20px' }}>
+
+        <div css={iconTextStyle}>
           <div
             style={{
-              width: '12px',
-              height: '12px',
+              width: '10px',
+              height: '10px',
               flexShrink: 0,
               borderRadius: '999px',
               backgroundColor: '#C53030',

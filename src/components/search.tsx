@@ -58,8 +58,8 @@ export const Search: React.FC = () => {
           }
         }}
       >
-        <option value="users">Users</option>
-        <option value="repositories">Repos</option>
+        <option value="user">Users</option>
+        <option value="repo">Repos</option>
       </select>
     </div>
   )

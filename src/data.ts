@@ -41,7 +41,7 @@ export const repo = {
   id: 3081286,
   node_id: 'MDEwOlJlcG9zaXRvcnkzMDgxMjg2',
   name: 'Tetris',
-  full_name: 'dtrupenn/Tetris',
+  full_name: 'dtrupenn/Tetriskd fakfiaof oaeijoj',
   owner: {
     login: 'dtrupenn',
     id: 872147,
@@ -56,7 +56,8 @@ export const repo = {
   },
   private: false,
   html_url: 'https://github.com/dtrupenn/Tetris',
-  description: 'A C implementation of Tetris using Pennsim through LC4',
+  description:
+    'A C implementation of Tetris using Pennsim through LC4 A C implementation of Tetris using Pennsim through LC4 A C implementation of Tetris using Pennsim through LC4 A C implementation of Tetris using Pennsim through LC4',
   fork: false,
   url: 'https://api.github.com/repos/dtrupenn/Tetris',
   created_at: '2012-01-01T00:31:50Z',
