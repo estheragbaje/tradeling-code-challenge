@@ -4,7 +4,8 @@ export const user = {
   login: 'octocat',
   id: 1,
   node_id: 'MDQ6VXNlcjE=',
-  avatar_url: 'https://github.com/images/error/octocat_happy.gif',
+  avatar_url:
+    'https://secure.gravatar.com/avatar/e7956084e75f239de85d3a31bc172ace?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png',
   gravatar_id: '',
   url: 'https://api.github.com/users/octocat',
   html_url: 'https://github.com/octocat',
@@ -26,7 +27,7 @@ export const user = {
   email: 'octocat@github.com',
   hireable: false,
   bio: 'There once was...',
-  twitter_username: 'monatheoctocat',
+  twitter_username: 'fadfa',
   public_repos: 2,
   public_gists: 1,
   followers: 20,
@@ -41,7 +42,7 @@ export const repo = {
   id: 3081286,
   node_id: 'MDEwOlJlcG9zaXRvcnkzMDgxMjg2',
   name: 'Tetris',
-  full_name: 'dtrupenn/Tetriskd fakfiaof oaeijoj',
+  full_name: 'dtrupenn/Tetriskd fakfiaof oaei joj',
   owner: {
     login: 'dtrupenn',
     id: 872147,

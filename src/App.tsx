@@ -1,6 +1,5 @@
 /**@jsx jsx */
-import { jsx } from '@emotion/core'
-import './index.css'
+import { jsx, css } from '@emotion/core'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navbar } from './components/nav-bar'
@@ -9,14 +8,22 @@ import { Search } from './components/search'
 import { SkeletonList } from './components/skeleton-list'
 import { UserList } from './components/user-list'
 import { repos, users } from './data'
-import { containerStyle, errorStyle, headlineStyle } from './global-styles'
-import { ErrorIcon } from './icons'
+import {
+  containerStyle,
+  errorStyle,
+  flexStyle,
+  headlineStyle,
+} from './global-styles'
+import { ErrorIcon, GithubIcon } from './icons'
 import { RootState } from './redux/store'
+import theme from './theme'
+
+const { colors } = theme
 
 const Status = ({ status }) => {
   if (status === 'fetching') return <SkeletonList />
 
-  if (status === 'idle') return <p>Type to search user...</p>
+  if (status === 'idle') return <p></p>
 
   if (status === 'error')
     return (
@@ -34,21 +41,39 @@ const App: React.FC = () => {
   const { result, status, type, searchQuery } = app
 
   return (
-    <div>
-      <Navbar />
+    <main style={{ backgroundColor: colors.gray.lightest, minHeight: '100vh' }}>
       <div css={containerStyle}>
-        <p css={headlineStyle}>Search users or repositories below</p>
-        <Search />
-      </div>
-      {/* <Status status={status} />
-      {type === 'repo' ? (
+        <div>
+          <div style={{ paddingTop: '64px', paddingBottom: '48px' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '24px',
+              }}
+            >
+              <GithubIcon style={{ fontSize: '40px', marginRight: '16px' }} />
+              <div>
+                <p style={{ fontWeight: 800, fontSize: '18px', lineHeight: 1 }}>
+                  Github Searcher
+                </p>
+                <p>Search users or repositories below</p>
+              </div>
+            </div>
+            <Search />
+          </div>
+        </div>
+
+        <Status status={status} />
+        {type === 'repo' ? (
         <RepoList data={result} />
       ) : (
         <UserList data={result} />
-      )} */}
-      {/* <UserList data={users} /> */}
-      <RepoList data={repos} />
-    </div>
+      )}
+        {/* <UserList data={users} /> */}
+        {/* <RepoList data={repos} /> */}
+      </div>
+    </main>
   )
 }
 

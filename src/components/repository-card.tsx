@@ -35,7 +35,13 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ data }) => (
         <div style={{ display: 'flex', alignItems: 'baseline' }}>
           <RepoIcon height="20px" />
           <a href={data.html_url} style={{ textDecoration: 'none' }}>
-            <p css={headingStyle} style={{ paddingLeft: '10px' }}>
+            <p
+              style={{
+                paddingLeft: '10px',
+                fontSize: '28px',
+                maxWidth: '130px',
+              }}
+            >
               {data.full_name}
             </p>
           </a>
@@ -61,7 +67,7 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ data }) => (
       style={{
         display: 'flex',
         justifyContent: 'space-between',
-        maxWidth: '250px',
+        // maxWidth: '250px',
         marginTop: '10px',
       }}
     >
@@ -79,11 +85,11 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ data }) => (
       </div>
     </div>
     <div
-      style={{
-        maxWidth: '300px',
-        display: 'flex',
-        // alignItems: 'center',
-      }}
+    // style={{
+    //   maxWidth: '300px',
+    //   display: 'flex',
+    //   // alignItems: 'center',
+    // }}
     >
       <p style={{ margin: '0' }}> Owned by, {data.name}</p>
       <a href={data.html_url} target="_blank">

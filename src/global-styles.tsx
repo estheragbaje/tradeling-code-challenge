@@ -1,5 +1,8 @@
 /**@jsx jsx */
 import { jsx, css, keyframes } from '@emotion/core'
+import theme from './theme'
+
+const { spacing, colors } = theme
 
 const mobile = '@media(max-width: 460px)'
 const tablet = '@media(max-width: 768px)'
@@ -14,36 +17,28 @@ const shimmer = keyframes({
 })
 
 export const cardStyle = css({
-  backgroundColor: '#white',
+  backgroundColor: 'white',
   padding: '20px',
-  maxWidth: '350px',
-  minHeight: '240px',
-  [tablet]: {
-    maxWidth: '230px',
-    // minHeight: '350px',
-  },
-  [mobile]: {
-    maxWidth: '200px',
-    // minHeight: '350px',
-  },
-  border: '1px solid #D9D9D9',
-  borderRadius: '5px',
-  boxShadow:
-    'inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2)',
+  minHeight: '160px',
+  borderRadius: '8px',
+  boxShadow: '0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)',
+  display: 'flex',
+  flexDirection: 'column',
 })
 
 export const headingStyle = css({
   textDecoration: 'none',
   color: '#3182CE',
-  fontSize: '24px',
+  fontSize: '16px',
   margin: '0px ',
-  fontWeight: 600,
-  maxWidth: '180px',
+  fontWeight: 700,
+  // maxWidth: '160px',
+  overflow: 'hidden',
 })
 
 export const flexStyle = css({
   display: 'flex',
-  alignItems: 'baseline',
+  alignItems: 'flex-start',
 })
 
 export const textStyle = css({
@@ -66,26 +61,20 @@ export const aStyle = css({
 
 export const gridStyle = css({
   display: 'grid',
-  gridColumnGap: '30px',
-  padding: '30px 30px',
-  gridRowGap: '30px',
-  gridTemplateColumns: 'auto auto auto',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  gridGap: spacing.md,
   [tablet]: {
-    gridTemplateColumns: 'auto auto',
-    padding: '16px',
-    gridColumnGap: '16px',
-    gridRowGap: '16px',
+    gridTemplateColumns: 'repeat(2, 1fr)',
   },
   [mobile]: {
-    gridTemplateColumns: 'auto',
-    padding: '10px',
-    gridColumnGap: '10px',
-    gridRowGap: '10px',
+    gridTemplateColumns: 'repeat(1, 1fr)',
   },
 })
 
 export const containerStyle = css({
-  padding: '24px 48px',
+  maxWidth: '1200px',
+  margin: '0 auto',
+  padding: '0 30px',
 })
 
 export const headlineStyle = css({
@@ -164,4 +153,17 @@ export const responsiveFlex = css({
     display: 'inline-block',
     padding: '0px',
   },
+})
+
+export const searchStyle = css({
+  borderWidth: 1,
+  borderRadius: 8,
+  boxShadow: '0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)',
+  paddingLeft: 16,
+  paddingRight: 16,
+  paddingTop: 12,
+  paddingBottom: 12,
+  border: 'none',
+  width: '100%',
+  maxWidth: 400,
 })

@@ -10,11 +10,11 @@ const navStyle = css({
 export const Navbar: React.FC = () => (
   <nav css={navStyle}>
     <div>
-      <img
+      {/* <img
         src="../logo.png"
         alt="github logo"
         style={{ paddingLeft: '10px' }}
-      />
+      /> */}
     </div>
   </nav>
 )
