@@ -47,11 +47,10 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
                 'https://avatars3.githubusercontent.com/u/583231?v=4'
               }
               alt={data.name}
-              height="50px"
-              style={{ borderRadius: '10000px' }}
+              style={{ borderRadius: '10000px', height: spacing.xxl }}
             />
           </a>
-          <div style={{ paddingLeft: '20px' }}>
+          <div style={{ paddingLeft: spacing.md }}>
             {data.name && (
               <div css={responsiveFlex}>
                 <a target="_blank" css={headingStyle} href={data.html_url}>
@@ -68,11 +67,11 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  marginTop: 8,
+                  marginTop: spacing.sm,
                 }}
               >
                 <LocationIcon color="#3182CE" height="14px" width="14px" />
-                <p style={{ marginLeft: '4px', fontSize: '12px' }}>
+                <p style={{ marginLeft: spacing.xs, fontSize: fontSizes.xs }}>
                   {data.location}
                 </p>
               </div>
@@ -90,7 +89,7 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
               target="_blank"
               css={textStyle}
               style={{
-                paddingLeft: '10px',
+                paddingLeft: spacing.sm,
                 textDecoration: 'none',
                 color: '#000',
               }}

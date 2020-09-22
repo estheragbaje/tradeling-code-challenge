@@ -2,7 +2,7 @@
 import { jsx, css, keyframes } from '@emotion/core'
 import theme from './theme'
 
-const { spacing, colors } = theme
+const { spacing, colors, fontSizes } = theme
 
 const mobile = '@media(max-width: 460px)'
 const tablet = '@media(max-width: 768px)'
@@ -18,9 +18,9 @@ const shimmer = keyframes({
 
 export const cardStyle = css({
   backgroundColor: 'white',
-  padding: '20px',
-  minHeight: '160px',
-  borderRadius: '8px',
+  padding: spacing.lmd,
+  minHeight: 60,
+  borderRadius: spacing.sm,
   boxShadow: '0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)',
   display: 'flex',
   flexDirection: 'column',
@@ -29,10 +29,9 @@ export const cardStyle = css({
 export const headingStyle = css({
   textDecoration: 'none',
   color: '#3182CE',
-  fontSize: '16px',
+  fontSize: fontSizes.md,
   margin: '0px ',
   fontWeight: 700,
-  // maxWidth: '160px',
   overflow: 'hidden',
 })
 
@@ -46,7 +45,7 @@ export const textStyle = css({
 })
 
 export const aStyle = css({
-  borderRadius: '4px',
+  borderRadius: spacing.xs,
   border: 'solid 1px #D9D9D9',
   background: '#F9FAFB',
   color: '#686868',
@@ -78,15 +77,15 @@ export const containerStyle = css({
 })
 
 export const headlineStyle = css({
-  fontSize: '28px',
+  fontSize: fontSizes.xxxl,
   margin: '5px 0px',
   fontWeight: 500,
   color: '#28A745',
   [tablet]: {
-    fontSize: '24px',
+    fontSize: fontSizes.xxl,
   },
   [mobile]: {
-    fontSize: '18px',
+    fontSize: fontSizes.lg,
   },
 })
 
@@ -94,43 +93,43 @@ export const errorStyle = css(flexStyle, {
   color: '#721c24',
   backgroundColor: '#f8d7da',
   borderColor: '#f5c6cb',
-  padding: 12,
+  padding: spacing.md,
   margin: 48,
   '.error-icon': {
-    width: 24,
+    width: spacing.lg,
   },
   '.error-text': {
-    fontSize: 16,
-    paddingLeft: 10,
+    fontSize: fontSizes.md,
+    paddingLeft: spacing.sm,
   },
 })
 
 export const skeletonStyles = css({
-  padding: 20,
+  padding: spacing.lmd,
   backgroundColor: '#F7FAFC',
-  borderRadius: 5,
+  borderRadius: spacing.xs,
   height: 160,
   '.top-section': {
     display: 'flex',
     alignItems: 'center',
   },
   '.image': {
-    width: 50,
-    height: 50,
+    width: spacing.xxl,
+    height: spacing.xxl,
     borderRadius: 9999,
-    marginRight: 20,
+    marginRight: spacing.lmd,
     backgroundColor: '#EDF2F7',
     flexShrink: 0,
   },
   '.text': {
-    height: 24,
+    height: spacing.lg,
     width: '100%',
     backgroundColor: '#EDF2F7',
   },
   '.bottom-text': {
     height: 70,
     width: '100%',
-    marginTop: '20px',
+    marginTop: spacing.lmd,
     backgroundColor: '#EDF2F7',
   },
   '.animate': {
@@ -157,28 +156,34 @@ export const responsiveFlex = css({
 
 export const searchStyle = css({
   borderWidth: 1,
-  borderRadius: 8,
+  borderRadius: spacing.sm,
   boxShadow: '0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)',
-  paddingLeft: 16,
-  paddingRight: 16,
-  paddingTop: 12,
-  paddingBottom: 12,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
+  paddingTop: spacing.lsm,
+  paddingBottom: spacing.lsm,
   border: 'none',
   width: '100%',
   maxWidth: 400,
+  [tablet]: {
+    maxWidth: 240,
+  },
+  [mobile]: {
+    maxWidth: 100,
+  },
 })
 
 export const selectStyle = css({
   borderWidth: 1,
-  borderRadius: 8,
+  borderRadius: spacing.sm,
   boxShadow: '0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)',
-  paddingLeft: 16,
-  paddingRight: 16,
-  paddingTop: 12,
-  paddingBottom: 12,
+  paddingLeft: spacing.md,
+  paddingRight: spacing.md,
+  paddingTop: spacing.lsm,
+  paddingBottom: spacing.lsm,
   border: 'none',
   width: '100%',
   maxWidth: 100,
-  marginLeft: 10,
+  marginLeft: spacing.sm,
   color: colors.gray.light,
 })

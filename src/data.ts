@@ -42,7 +42,7 @@ export const repo = {
   id: 3081286,
   node_id: 'MDEwOlJlcG9zaXRvcnkzMDgxMjg2',
   name: 'Tetris',
-  full_name: 'dtrupenn/Tetriskd fakfiaof oaei joj',
+  full_name: 'dtrupenn/Tetriskdfakfiaofoaeidfdafadfadoj',
   owner: {
     login: 'dtrupenn',
     id: 872147,
