@@ -5,7 +5,7 @@ import debounce from 'lodash.debounce'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchByQuery, setType, setQuery } from '../redux/reducer'
 import { RootState } from '../redux/store'
-import { searchStyle } from '../global-styles'
+import { searchStyle, selectStyle } from '../global-styles'
 
 export const Search: React.FC = () => {
   const app = useSelector((state: RootState) => state.app)
@@ -40,7 +40,6 @@ export const Search: React.FC = () => {
       <input
         type="text"
         placeholder="Start typing to search..."
-        // style={{ padding: '10px', fontSize: '16px' }}
         value={inputValue}
         onChange={(e) => {
           setInputValue(e.target.value)
@@ -50,7 +49,7 @@ export const Search: React.FC = () => {
       <select
         name="search"
         id="fields"
-        style={{ padding: '10px', marginLeft: '10px' }}
+        style={{ paddingLeft: '10px', maxWidth: '100px' }}
         onChange={(e) => {
           const value = e.target.value
           dispatch(setType(value))
@@ -59,8 +58,11 @@ export const Search: React.FC = () => {
             search(searchQuery)
           }
         }}
+        css={selectStyle}
       >
-        <option value="user">Users</option>
+        <option value="user" style={{ color: 'red' }}>
+          Users
+        </option>
         <option value="repo">Repos</option>
       </select>
     </div>

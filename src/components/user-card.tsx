@@ -31,8 +31,6 @@ interface UserCardProps {
 }
 
 export const UserCard: React.FC<UserCardProps> = ({ data }) => {
-  const max_length = 80
-
   return (
     <div css={cardStyle}>
       <div style={{ flex: 1 }}>
@@ -54,32 +52,35 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
             />
           </a>
           <div style={{ paddingLeft: '20px' }}>
-            <div css={responsiveFlex}>
-              <a target="_blank" css={headingStyle} href={data.html_url}>
-                {data.name}
-              </a>
-            </div>
+            {data.name && (
+              <div css={responsiveFlex}>
+                <a target="_blank" css={headingStyle} href={data.html_url}>
+                  {data.name}
+                </a>
+              </div>
+            )}
+
             <p style={{ lineHeight: 1, color: colors.gray.light }}>
               {data.login}
             </p>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginTop: 8,
-              }}
-            >
-              <LocationIcon color="#3182CE" height="14px" width="14px" />
-              <p style={{ marginLeft: '4px', fontSize: '12px' }}>
-                {data.location}
-              </p>
-            </div>
+            {data.location && (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginTop: 8,
+                }}
+              >
+                <LocationIcon color="#3182CE" height="14px" width="14px" />
+                <p style={{ marginLeft: '4px', fontSize: '12px' }}>
+                  {data.location}
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
-        <div css={textStyle}>
-          <p>{data.bio}</p>
-        </div>
+        <div css={textStyle}>{data.bio && <p>{data.bio}</p>}</div>
         {data.twitter_username && (
           <div
             style={{ maxWidth: '300px', display: 'flex', alignItems: 'center' }}
