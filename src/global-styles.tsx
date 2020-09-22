@@ -183,7 +183,7 @@ export const selectStyle = css({
   paddingBottom: spacing.lsm,
   border: 'none',
   width: '100%',
-  maxWidth: 100,
+  maxWidth: 150,
   marginLeft: spacing.sm,
   color: colors.gray.light,
 })

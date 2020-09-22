@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchByQuery, setType, setQuery } from '../redux/reducer'
 import { RootState } from '../redux/store'
 import { searchStyle, selectStyle } from '../global-styles'
+import theme from '../theme'
+
+const { spacing } = theme
 
 export const Search: React.FC = () => {
   const app = useSelector((state: RootState) => state.app)
@@ -49,7 +52,7 @@ export const Search: React.FC = () => {
       <select
         name="search"
         id="fields"
-        style={{ paddingLeft: '10px', maxWidth: '100px' }}
+        style={{ paddingLeft: spacing.lsm, maxWidth: '100px' }}
         onChange={(e) => {
           const value = e.target.value
           dispatch(setType(value))
@@ -60,10 +63,8 @@ export const Search: React.FC = () => {
         }}
         css={selectStyle}
       >
-        <option value="user" style={{ color: 'red' }}>
-          Users
-        </option>
-        <option value="repo">Repos</option>
+        <option value="user">Users</option>
+        <option value="repo">Repositories</option>
       </select>
     </div>
   )
