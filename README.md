@@ -18,9 +18,9 @@ When the user doesn't have any input or clears the input, the input fields shoul
 ## The UI Design
 
 The UI design for the Desktop, Tablet and Mobile screens were done in Figma
-[[Figma Design](https://www.figma.com/file/4iXpoo26sm8LGA6AuQdc8I/Tradeling-Code-Challenge?node-id=0%3A1)]
 
-The link to the figma design is here
+The link to the figma design is below:
+[[Figma Design](https://www.figma.com/file/4iXpoo26sm8LGA6AuQdc8I/Tradeling-Code-Challenge?node-id=0%3A1)]
 
 ## The Libraries Used
 
