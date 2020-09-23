@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { jsx } from '@emotion/core'
 import React from 'react'
-import { gridStyle } from '../global-styles'
+import { gridStyle } from '../styles'
 import RepositoryCard, { GithubRepo } from './repository-card'
 
 interface RepoListProps {

@@ -1,9 +1,8 @@
 /**@jsx jsx */
-import { jsx, css, keyframes } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import React from 'react'
-import UserCard from './user-card'
-import { gridStyle } from '../global-styles'
-import { GithubUser } from './user-card'
+import { gridStyle } from '../styles'
+import UserCard, { GithubUser } from './user-card'
 
 interface UserListProps {
   data: GithubUser[]

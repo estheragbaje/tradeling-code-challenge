@@ -21,8 +21,13 @@ const githubAPI = {
 
 /**
  * Simple object cache to store returned value from API
+ *
+ * key - `{type}:${searchQuery}`
+ * value - API result
+ *
+ * I could possibly put this in localStorage as well.
  */
-const cache = {}
+const cache: { [key: string]: any[] } = {}
 
 /**
  * Create a thunk for fetching user
@@ -35,9 +40,22 @@ export const fetchByQuery = createAsyncThunk(
   async (query: string, thunkAPI) => {
     const state = thunkAPI.getState() as RootState
 
+    // Create a unique cache key to store the returned API value
+    const cacheKey = `${state.app.type}:${query}`
+
+    // Check if key exists in cache, and return the cached value
+    // to avoid over-fetching
+    if (cacheKey in cache) {
+      return cache[cacheKey]
+    }
+
     if (state.app.type === 'repo') {
       const response = await githubAPI.searchRepo(query)
-      return response.data.items
+      const repos = response.data.items
+
+      // Save the returned value in cache
+      cache[cacheKey] = repos
+      return repos
     }
 
     /**
@@ -50,14 +68,17 @@ export const fetchByQuery = createAsyncThunk(
      * the user. The returned value from search above doesn't contain
      * all the needed details
      */
-    const response = await Promise.all(
+    const users = await Promise.all(
       data.items.map(async (user) => {
         const res = await githubAPI.getUserDetails(user.login)
         return res.data
       })
     )
 
-    return response
+    // Save the returned value in cache
+    cache[cacheKey] = users
+
+    return users
   }
 )
 
@@ -78,6 +99,10 @@ const app = createSlice({
     setQuery: (state, action) => {
       const inputValue = action.payload
       state.searchQuery = inputValue
+      /**
+       * Requirement: Clear result when input is empty
+       * or less than 3 characters
+       */
       if (inputValue === '' || inputValue.length < 3) {
         state.result = []
       }

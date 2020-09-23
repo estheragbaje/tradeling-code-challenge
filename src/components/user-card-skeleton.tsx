@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { jsx, css } from '@emotion/core'
 import React from 'react'
-import { skeletonStyles } from '../global-styles'
+import { skeletonStyles } from '../styles'
 
 export const UserCardSkeleton = () => {
   return (

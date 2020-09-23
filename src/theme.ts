@@ -6,9 +6,7 @@ const theme = {
   spacing: {
     xs: '4px',
     sm: '8px',
-    lsm: '12px',
     md: '16px',
-    lmd: '20px',
     lg: '24px',
     xl: '40px',
     xxl: '48px',

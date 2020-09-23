@@ -18,7 +18,7 @@ const shimmer = keyframes({
 
 export const cardStyle = css({
   backgroundColor: 'white',
-  padding: spacing.lmd,
+  padding: spacing.md,
   minHeight: 60,
   borderRadius: spacing.sm,
   boxShadow: '0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)',
@@ -105,7 +105,7 @@ export const errorStyle = css(flexStyle, {
 })
 
 export const skeletonStyles = css({
-  padding: spacing.lmd,
+  padding: spacing.md,
   backgroundColor: '#F7FAFC',
   borderRadius: spacing.xs,
   height: 160,
@@ -117,7 +117,7 @@ export const skeletonStyles = css({
     width: spacing.xxl,
     height: spacing.xxl,
     borderRadius: 9999,
-    marginRight: spacing.lmd,
+    marginRight: spacing.md,
     backgroundColor: '#EDF2F7',
     flexShrink: 0,
   },
@@ -129,7 +129,7 @@ export const skeletonStyles = css({
   '.bottom-text': {
     height: 70,
     width: '100%',
-    marginTop: spacing.lmd,
+    marginTop: spacing.md,
     backgroundColor: '#EDF2F7',
   },
   '.animate': {
@@ -145,13 +145,15 @@ export const responsiveFlex = css({
   alignItems: 'baseline',
   justifyContent: 'space-between',
   [tablet]: {
-    display: 'inline-block',
-    padding: '0px',
+    display: 'block',
   },
-  [mobile]: {
-    display: 'inline-block',
-    padding: '0px',
-  },
+})
+
+export const lineClampStyle = css({
+  display: '-webkit-box',
+  WebkitBoxOrient: 'vertical',
+  WebkitLineClamp: 3,
+  overflow: 'hidden',
 })
 
 export const searchStyle = css({

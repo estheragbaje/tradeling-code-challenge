@@ -1,14 +1,14 @@
 /**@jsx jsx */
-import { jsx, css, keyframes } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import React from 'react'
-import { LocationIcon, TwitterIcon } from '../icons'
 import {
   cardStyle,
-  flexStyle,
-  textStyle,
   headingStyle,
+  lineClampStyle,
   responsiveFlex,
-} from '../global-styles'
+  textStyle,
+} from '../styles'
+import { LocationIcon, TwitterIcon } from '../icons'
 import theme from '../theme'
 
 const { colors, spacing, fontSizes } = theme
@@ -34,9 +34,9 @@ interface UserCardProps {
 export const UserCard: React.FC<UserCardProps> = ({ data }) => {
   return (
     <div css={cardStyle}>
-      <div style={{ flex: 1 }}>
+      <div css={{ flex: 1 }}>
         <div
-          style={{
+          css={{
             display: 'flex',
             alignItems: 'flex-start',
           }}
@@ -48,10 +48,10 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
                 'https://avatars3.githubusercontent.com/u/583231?v=4'
               }
               alt={data.name}
-              style={{ borderRadius: '10000px', height: spacing.xxl }}
+              css={{ borderRadius: '10000px', height: spacing.xxl }}
             />
           </a>
-          <div style={{ paddingLeft: spacing.md }}>
+          <div css={{ paddingLeft: spacing.md }}>
             {data.name && (
               <div css={responsiveFlex}>
                 <a target="_blank" css={headingStyle} href={data.html_url}>
@@ -60,19 +60,19 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
               </div>
             )}
 
-            <p style={{ lineHeight: 1, color: colors.gray.light }}>
+            <p css={{ lineHeight: 1, color: colors.gray.light }}>
               {data.login}
             </p>
             {data.location && (
               <div
-                style={{
+                css={{
                   display: 'flex',
                   alignItems: 'center',
                   marginTop: spacing.sm,
                 }}
               >
                 <LocationIcon color="#3182CE" height="14px" width="14px" />
-                <p style={{ marginLeft: spacing.xs, fontSize: fontSizes.xs }}>
+                <p css={{ marginLeft: spacing.xs, fontSize: fontSizes.xs }}>
                   {data.location}
                 </p>
               </div>
@@ -80,20 +80,27 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
           </div>
         </div>
 
-        <div css={textStyle}>{data.bio && <p>{data.bio}</p>}</div>
+        {data.bio && (
+          <div css={[textStyle, lineClampStyle]}>
+            <p>{data.bio}</p>
+          </div>
+        )}
+
         {data.twitter_username && (
           <div
-            style={{ maxWidth: '300px', display: 'flex', alignItems: 'center' }}
+            css={{ maxWidth: '300px', display: 'flex', alignItems: 'center' }}
           >
             <TwitterIcon color="#1DA1F2" height="20px" />
             <a
               target="_blank"
-              css={textStyle}
-              style={{
-                paddingLeft: spacing.sm,
-                textDecoration: 'none',
-                color: '#000',
-              }}
+              css={[
+                textStyle,
+                {
+                  paddingLeft: spacing.sm,
+                  textDecoration: 'none',
+                  color: '#000',
+                },
+              ]}
               href={`https://twitter.com/${data.twitter_username}`}
             >
               @{data.twitter_username}
@@ -102,7 +109,7 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
         )}
       </div>
 
-      <div css={responsiveFlex} style={{ maxWidth: '300px' }}>
+      <div css={[responsiveFlex, { maxWidth: '300px' }]}>
         <p css={textStyle}>
           <b>{data.followers}</b> Followers
         </p>

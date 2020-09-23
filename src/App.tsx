@@ -6,7 +6,7 @@ import { RepoList } from './components/repo-list'
 import { Search } from './components/search'
 import { SkeletonList } from './components/skeleton-list'
 import { UserList } from './components/user-list'
-import { containerStyle, errorStyle } from './global-styles'
+import { containerStyle, errorStyle } from './styles'
 import { ErrorIcon, GithubIcon } from './icons'
 import { RootState } from './redux/store'
 import theme from './theme'
@@ -36,22 +36,28 @@ const App: React.FC = () => {
   const isCentered = status === 'idle' || searchQuery === ''
 
   return (
-    <main style={{ backgroundColor: colors.gray.lightest, minHeight: '100vh' }}>
+    <main
+      css={{
+        backgroundColor: colors.gray.lightest,
+        minHeight: '100vh',
+        paddingBottom: spacing.xxxl,
+      }}
+    >
       <div css={containerStyle}>
         <div>
-          <div style={{ paddingTop: spacing.xxxl, paddingBottom: spacing.xxl }}>
+          <div css={{ paddingTop: spacing.xxxl, paddingBottom: spacing.xxl }}>
             <div
-              style={{
+              css={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: isCentered ? 'center' : 'flex-start',
                 marginBottom: spacing.lg,
               }}
             >
-              <GithubIcon style={{ fontSize: '40px', marginRight: '16px' }} />
+              <GithubIcon css={{ fontSize: '40px', marginRight: '16px' }} />
               <div>
                 <p
-                  style={{
+                  css={{
                     fontWeight: 800,
                     fontSize: fontSizes.lg,
                     lineHeight: 1,
@@ -72,8 +78,6 @@ const App: React.FC = () => {
         ) : (
           <UserList data={result} />
         )}
-        {/* <UserList data={users} /> */}
-        {/* <RepoList data={repos} /> */}
       </div>
     </main>
   )

@@ -5,7 +5,7 @@ import debounce from 'lodash.debounce'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchByQuery, setType, setQuery } from '../redux/reducer'
 import { RootState } from '../redux/store'
-import { searchStyle, selectStyle } from '../global-styles'
+import { searchStyle, selectStyle } from '../styles'
 import theme from '../theme'
 
 const { spacing } = theme
@@ -93,7 +93,6 @@ export const Search: React.FC = () => {
             search(searchQuery)
           }
         }}
-        style={{ paddingLeft: spacing.md }}
         css={selectStyle}
       >
         <option value="user">Users</option>
