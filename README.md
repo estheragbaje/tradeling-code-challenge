@@ -17,7 +17,7 @@ The approach taken to solve this task is divided into 5 phases:
 Checked out the Github API structure for users and repositories to identify the expected results.
 In addition to this I made the decision to use Emotion for styling because it is lightweight and easy to use. Emotion is a library designed for writing css styles with JavaScript. [Emotion](https://emotion.sh/)]
 Octokit was chosen as the Official clients for the GitHub API in order to query users and repositories. [Octokit](https://www.npmjs.com/package/@octokit/rest)]
-Lastly, I researched into the libraries to be used in this project and chose to use Redux Toolkit [Redux Toolkit](https://redux-toolkit.js.org/)]
+Lastly, I researched into the libraries to be used in this project and chose to use Redux Toolkit because it makes it easier to write good Redux applications and speeds up development and allows one to write simpler code. [Redux Toolkit](https://redux-toolkit.js.org/)]
 
 ### 2. Styling and Design
 
