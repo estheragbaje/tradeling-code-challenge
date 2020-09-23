@@ -6,7 +6,8 @@ import { RootState } from './store'
 /**
  * Create an github api client (fetcher)
  */
-const octokit = new Octokit({ auth: process.env.REACT_APP_GITHUB_API })
+// const octokit = new Octokit({ auth: process.env.REACT_APP_GITHUB_API })
+const octokit = new Octokit()
 
 /**
  * Create an object for the github APIs we need
