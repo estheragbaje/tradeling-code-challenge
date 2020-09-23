@@ -19,6 +19,7 @@ const theme = {
       light: '#718096',
       base: '#4A5568',
       dark: '#1A202C',
+      darker: '#4a5568',
     },
     blue: {
       base: '#006FBB',

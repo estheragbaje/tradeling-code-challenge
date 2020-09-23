@@ -188,4 +188,5 @@ export const selectStyle = css({
   maxWidth: 150,
   marginLeft: spacing.sm,
   color: colors.gray.light,
+  backgroundColor: 'white',
 })

@@ -98,7 +98,7 @@ export const UserCard: React.FC<UserCardProps> = ({ data }) => {
                 {
                   paddingLeft: spacing.sm,
                   textDecoration: 'none',
-                  color: '#000',
+                  color: colors.gray.darker,
                 },
               ]}
               href={`https://twitter.com/${data.twitter_username}`}
