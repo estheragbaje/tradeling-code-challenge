@@ -15,8 +15,10 @@ The approach taken to solve this task is divided into 5 phases:
 ### 1. Planning and Research
 
 Checked out the Github API structure for users and repositories to identify the expected results.
-In addition to this I made the decision to use Emotion for styling because it is lightweight and easy to use. Emotion is a library designed for writing css styles with JavaScript. [Emotion](https://emotion.sh/)]
-Octokit was chosen as the Official clients for the GitHub API in order to query users and repositories. [Octokit](https://www.npmjs.com/package/@octokit/rest)]
+In addition to this I made the decision to use Emotion for styling because it is lightweight and easy to use. Emotion is a library designed for writing css styles with JavaScript. [Emotion](https://emotion.sh/).
+
+Octokit was chosen as the Official clients for the GitHub API in order to query users and repositories. [Octokit](https://www.npmjs.com/package/@octokit/rest).
+
 Lastly, I researched into the libraries to be used in this project and chose to use Redux Toolkit because it makes it easier to write good Redux applications and speeds up development and allows one to write simpler code. [Redux Toolkit](https://redux-toolkit.js.org/)]
 
 ### 2. Styling and Design
@@ -27,12 +29,14 @@ After this, I later went on to flesh out this sketch into proper UI mockups for 
 ### 3. Building User Interface
 
 Once I had the UI design ready, I went ahead to populate the dummy api data and specified typescript definitions, types, interfaces as well as built the card components & lists, repo components & lists and search components.
+
 I also built out the status states from loading, error and success states.
 The styles and theme for the app was also created.
 
 ### 4. Setting up Reducer, Store and Redux-Persist
 
 After the entire UI had been built, I then went ahead to set up the reducer and store to be used for both users and repos, following the documentation from Redux Toolkit.
+
 In addition to this, I set up the redux-persist to ensure the data is cached in the store and persisted so that no more API calls is made if we already have the results for the search term.
 
 ### 5. General Code Cleanup
