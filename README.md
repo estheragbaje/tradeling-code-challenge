@@ -1,6 +1,6 @@
 # Tradeling Frontend Code Challenge Solution
 
-This code works through the use of **React**, **TypeScript** and **Redux** to filter users, issues and repositories.
+This code works through the use of **React**, **TypeScript** and **Redux** to filter users and repositories.
 
 ## The Task
 
