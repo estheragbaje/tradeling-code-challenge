@@ -94,7 +94,7 @@ export const errorStyle = css(flexStyle, {
   backgroundColor: '#f8d7da',
   borderColor: '#f5c6cb',
   padding: spacing.md,
-  margin: 48,
+  borderRadius: spacing.sm,
   '.error-icon': {
     width: spacing.lg,
   },

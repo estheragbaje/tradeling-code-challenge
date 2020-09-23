@@ -20,6 +20,11 @@ const githubAPI = {
 }
 
 /**
+ * Simple object cache to store returned value from API
+ */
+const cache = {}
+
+/**
  * Create a thunk for fetching user
  *
  * It makes it easy to handle the promise lifecycles (pending, resolved, rejected)
@@ -82,7 +87,7 @@ const app = createSlice({
     },
     setType: (state, action) => {
       state.type = action.payload
-    }
+    },
   },
 
   /**

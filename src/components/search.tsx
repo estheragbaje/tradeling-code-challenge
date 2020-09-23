@@ -28,9 +28,11 @@ const useUpdateEffect: typeof React.useEffect = (effect, dependencies = []) => {
 
 export const Search: React.FC = () => {
   const app = useSelector((state: RootState) => state.app)
-  const { searchQuery, type } = app
+  const { searchQuery, type, status } = app
 
   const dispatch = useDispatch()
+
+  const isCentered = status === 'idle' || searchQuery === ''
 
   const search = async (query) => {
     try {
@@ -64,7 +66,12 @@ export const Search: React.FC = () => {
   }, [inputValue])
 
   return (
-    <div>
+    <div
+      css={{
+        display: 'flex',
+        justifyContent: isCentered ? 'center' : undefined,
+      }}
+    >
       <input
         type="text"
         placeholder="Start typing to search..."
@@ -77,7 +84,6 @@ export const Search: React.FC = () => {
       <select
         name="search"
         id="fields"
-        style={{ paddingLeft: spacing.md }}
         value={type}
         onChange={(e) => {
           const value = e.target.value
@@ -87,6 +93,7 @@ export const Search: React.FC = () => {
             search(searchQuery)
           }
         }}
+        style={{ paddingLeft: spacing.md }}
         css={selectStyle}
       >
         <option value="user">Users</option>

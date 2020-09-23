@@ -16,7 +16,7 @@ const { colors, spacing, fontSizes } = theme
 const Status = ({ status }) => {
   if (status === 'fetching') return <SkeletonList />
 
-  if (status === 'idle') return <p></p>
+  if (status === 'idle') return <p> </p>
 
   if (status === 'error')
     return (
@@ -33,6 +33,8 @@ const App: React.FC = () => {
   const app = useSelector((state: RootState) => state.app)
   const { result, status, type, searchQuery } = app
 
+  const isCentered = status === 'idle' || searchQuery === ''
+
   return (
     <main style={{ backgroundColor: colors.gray.lightest, minHeight: '100vh' }}>
       <div css={containerStyle}>
@@ -42,6 +44,7 @@ const App: React.FC = () => {
               style={{
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: isCentered ? 'center' : 'flex-start',
                 marginBottom: spacing.lg,
               }}
             >
