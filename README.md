@@ -6,7 +6,7 @@ This code works through the use of **React**, **TypeScript** and **Redux** to fi
 
 There will be two input fields. The first is a search field for the user to type the text. While the other is a dropdown where user can either pick "Users", or "Repositories" to define the entities that they want to search.
 
-When the user doesn't have any input or clears the input, the input fields should be shown in the middle of the page.
+When the user doesn't have any input or clears the input, the input fields should be shown in the middle of the page. [The Task](https://github.com/tradeling/coding-tasks/tree/develop/frontend-typescript)]
 
 ## The Approach
 
