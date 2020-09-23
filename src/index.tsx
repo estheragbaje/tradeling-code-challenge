@@ -11,8 +11,8 @@ let persistor = persistStore(store)
 
 ReactDOM.render(
   <Provider store={store}>
+    <CSSReset />
     <PersistGate loading={null} persistor={persistor}>
-      <CSSReset />
       <App />
     </PersistGate>
   </Provider>,

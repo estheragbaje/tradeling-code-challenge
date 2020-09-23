@@ -10,9 +10,25 @@ import theme from '../theme'
 
 const { spacing } = theme
 
+/**
+ * A custom useEffect hook that only triggers on updates, not on initial mount
+ * Idea stolen from: https://stackoverflow.com/a/55075818/1526448
+ */
+const useUpdateEffect: typeof React.useEffect = (effect, dependencies = []) => {
+  const isInitialMount = React.useRef(true)
+
+  React.useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+    } else {
+      effect()
+    }
+  }, dependencies)
+}
+
 export const Search: React.FC = () => {
   const app = useSelector((state: RootState) => state.app)
-  const { searchQuery } = app
+  const { searchQuery, type } = app
 
   const dispatch = useDispatch()
 
@@ -25,7 +41,7 @@ export const Search: React.FC = () => {
     }
   }
 
-  const [inputValue, setInputValue] = React.useState('')
+  const [inputValue, setInputValue] = React.useState(searchQuery)
 
   const debounceSearch = debounce((value: string) => {
     dispatch(setQuery(value))
@@ -34,7 +50,16 @@ export const Search: React.FC = () => {
     }
   }, 250)
 
-  React.useEffect(() => {
+  /**
+   * React.useEffect(() => {}, []): Mount only
+   * React.useEffect(() => {}, [value]): Mount + when value changes
+   * useUpdateEffect(() => {}, []): When value changes only
+   */
+
+  /**
+   * Perform search only when the input value changes, not on mount
+   */
+  useUpdateEffect(() => {
     debounceSearch(inputValue)
   }, [inputValue])
 
@@ -52,7 +77,8 @@ export const Search: React.FC = () => {
       <select
         name="search"
         id="fields"
-        style={{ paddingLeft: spacing.lsm, maxWidth: '100px' }}
+        style={{ paddingLeft: spacing.md }}
+        value={type}
         onChange={(e) => {
           const value = e.target.value
           dispatch(setType(value))

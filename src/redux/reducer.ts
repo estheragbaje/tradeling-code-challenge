@@ -6,7 +6,7 @@ import { RootState } from './store'
 /**
  * Create an github api client (fetcher)
  */
-const octokit = new Octokit()
+const octokit = new Octokit({ auth: process.env.REACT_APP_GITHUB_API })
 
 /**
  * Create an object for the github APIs we need
@@ -81,9 +81,8 @@ const app = createSlice({
       state.result = []
     },
     setType: (state, action) => {
-      state.result = []
       state.type = action.payload
-    },
+    }
   },
 
   /**

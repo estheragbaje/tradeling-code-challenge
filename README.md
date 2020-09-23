@@ -24,7 +24,7 @@ Here's the link to the design:
 
 ## The Libraries Used
 
-Styled Components
+Emotion
 Redux- Persist
 
 ## Helpful Commands

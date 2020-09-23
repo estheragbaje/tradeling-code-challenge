@@ -24,6 +24,7 @@ export interface GithubUser {
   followers: number
   following: number
   twitter_username: string
+  id: number
 }
 
 interface UserCardProps {

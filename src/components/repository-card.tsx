@@ -1,7 +1,7 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import React from 'react'
-import { cardStyle, headingStyle, flexStyle, gridStyle } from '../global-styles'
+import { cardStyle, headingStyle } from '../global-styles'
 import { ErrorIcon, ForkIcon, RepoIcon, StartIcon } from '../icons'
 import theme from '../theme'
 
@@ -20,6 +20,7 @@ export interface GithubRepo {
   owner: {
     avatar_url: string
   }
+  id: number
 }
 
 interface RepoCardProps {

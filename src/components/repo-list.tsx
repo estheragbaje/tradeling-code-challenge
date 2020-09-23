@@ -11,7 +11,8 @@ interface RepoListProps {
 export const RepoList: React.FC<RepoListProps> = ({ data }) => {
   return (
     <div css={gridStyle}>
-      {data.length > 0 && data.map((item) => <RepositoryCard data={item} />)}
+      {data.length > 0 &&
+        data.map((item) => <RepositoryCard data={item} key={item.id} />)}
     </div>
   )
 }

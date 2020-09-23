@@ -13,7 +13,7 @@ export const UserList: React.FC<UserListProps> = ({ data }) => {
   return (
     <div css={gridStyle}>
       {data.map((item) => (
-        <UserCard data={item} />
+        <UserCard data={item} key={item.id} />
       ))}
     </div>
   )
