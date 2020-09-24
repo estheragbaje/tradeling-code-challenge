@@ -7,7 +7,7 @@ This code works through the use of
 - **Redux**
   to filter users and repositories.
 
-<img src="/github_searcher.png" />
+<img src="public/github_searcher.png" />
 
 ## The Task
 
