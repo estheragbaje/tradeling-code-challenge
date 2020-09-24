@@ -1,12 +1,19 @@
 # Tradeling Frontend Code Challenge Solution
 
-This code works through the use of **React**, **TypeScript** and **Redux** to filter users and repositories.
+This code works through the use of
+
+- **React**,
+- **TypeScript** and
+- **Redux**
+  to filter users and repositories.
+
+<img src="/github_searcher.png" />
 
 ## The Task
 
 There will be two input fields. The first is a search field for the user to type the text. While the other is a dropdown where user can either pick "Users", or "Repositories" to define the entities that they want to search.
 
-When the user doesn't have any input or clears the input, the input fields should be shown in the middle of the page. [The Task](https://github.com/tradeling/coding-tasks/tree/develop/frontend-typescript)]
+When the user doesn't have any input or clears the input, the input fields should be shown in the middle of the page. [The Task](https://github.com/tradeling/coding-tasks/tree/develop/frontend-typescript).
 
 ## The Approach
 
@@ -14,12 +21,13 @@ The approach taken to solve this task is divided into 5 phases:
 
 ### 1. Planning and Research
 
-Checked out the Github API structure for users and repositories to identify the expected results.
-In addition to this I made the decision to use Emotion for styling because it is lightweight and easy to use. Emotion is a library designed for writing css styles with JavaScript. [Emotion](https://emotion.sh/).
+- Checked out the Github API structure for users and repositories to identify the expected results.
 
-Octokit was chosen as the Official clients for the GitHub API in order to query users and repositories. [Octokit](https://www.npmjs.com/package/@octokit/rest).
+- Emotion is a library designed for writing css styles with JavaScript. [Emotion](https://emotion.sh/). I made the decision to use this library for styling because it is lightweight and easy to use.
 
-Lastly, I researched into the libraries to be used in this project and chose to use Redux Toolkit because it makes it easier to write good Redux applications and speeds up development and allows one to write simpler code. [Redux Toolkit](https://redux-toolkit.js.org/)]
+- Octokit was chosen as the Official clients for the GitHub API in order to query users and repositories. [Octokit](https://www.npmjs.com/package/@octokit/rest).
+
+- Lastly, I researched into the libraries to be used in this project and chose to use Redux Toolkit because it makes it easier to write good Redux applications and speeds up development and allows one to write simpler code. [Redux Toolkit](https://redux-toolkit.js.org/).
 
 ### 2. Styling and Design
 
@@ -52,13 +60,15 @@ Here's the link to the design:
 
 ## The Libraries Used
 
-Redux Toolkit
-Redux- Persist
-Emotion
-Octokit
+- Redux Toolkit
+- Redux-Persist
+- Emotion
+- Octokit
 
 ## Helpful Commands
 
 In the project directory, you can run:
+
+- `yarn` - to install dependencies.
 
 - `yarn start` - runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
