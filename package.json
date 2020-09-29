@@ -31,7 +31,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "use-debounce": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

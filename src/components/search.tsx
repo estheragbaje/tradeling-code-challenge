@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { jsx } from '@emotion/core'
 import React from 'react'
-import debounce from 'lodash.debounce'
+import { useDebounce } from 'use-debounce'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchByQuery, setType, setQuery } from '../redux/reducer'
 import { RootState } from '../redux/store'
@@ -27,6 +27,13 @@ export const Search: React.FC = () => {
   const app = useSelector((state: RootState) => state.app)
   const { searchQuery, type, status } = app
 
+  /**
+   * React hook to manage debounce of search query
+   * @see https://github.com/xnimorz/use-debounce
+   */
+
+  const [debouncedSearchQuery] = useDebounce(searchQuery, 1000)
+
   const dispatch = useDispatch()
 
   const isCentered = status === 'idle' || searchQuery === ''
@@ -40,15 +47,6 @@ export const Search: React.FC = () => {
     }
   }
 
-  const [inputValue, setInputValue] = React.useState(searchQuery)
-
-  const debounceSearch = debounce((value: string) => {
-    dispatch(setQuery(value))
-    if (value.length > 2) {
-      search(value)
-    }
-  }, 1000)
-
   /**
    * React.useEffect(() => {}, []): Mount only
    * React.useEffect(() => {}, [value]): Mount + when value changes
@@ -56,11 +54,14 @@ export const Search: React.FC = () => {
    */
 
   /**
-   * Perform search only when the input value changes, not on mount
+   * Perform search only when the debounced search query changes, not on mount
    */
+
   useUpdateEffect(() => {
-    debounceSearch(inputValue)
-  }, [inputValue])
+    if (debouncedSearchQuery.length > 2) {
+      search(debouncedSearchQuery)
+    }
+  }, [debouncedSearchQuery])
 
   return (
     <div
@@ -72,9 +73,9 @@ export const Search: React.FC = () => {
       <input
         type="text"
         placeholder="Start typing to search..."
-        value={inputValue}
+        value={searchQuery}
         onChange={(e) => {
-          setInputValue(e.target.value)
+          dispatch(setQuery(e.target.value))
         }}
         css={searchStyle}
       />
