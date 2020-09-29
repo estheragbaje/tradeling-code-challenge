@@ -119,7 +119,9 @@ const app = createSlice({
   /**
    * The builder API is used to ensure types work correctly for async reducers
    * @see https://redux-toolkit.js.org/usage/usage-with-typescript#building-type-safe-reducer-argument-objects
+   * @see https://redux-toolkit.js.org/api/createSlice#extrareducers
    */
+  
   extraReducers: (builder) => {
     builder.addCase(fetchByQuery.fulfilled, (state, action) => {
       // returned data from API

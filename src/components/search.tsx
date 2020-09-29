@@ -6,9 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchByQuery, setType, setQuery } from '../redux/reducer'
 import { RootState } from '../redux/store'
 import { searchStyle, selectStyle } from '../styles'
-import theme from '../theme'
-
-const { spacing } = theme
 
 /**
  * A custom useEffect hook that only triggers on updates, not on initial mount
@@ -50,7 +47,7 @@ export const Search: React.FC = () => {
     if (value.length > 2) {
       search(value)
     }
-  }, 250)
+  }, 1000)
 
   /**
    * React.useEffect(() => {}, []): Mount only
