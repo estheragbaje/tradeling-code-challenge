@@ -28,6 +28,16 @@ export const Search: React.FC = () => {
   const { searchQuery, type, status } = app
 
   /**
+   * TASK: Console.log 'I have been changed' only when type changes from user to repo
+   */
+  
+  useUpdateEffect(() => {
+    if (type == 'repo') {
+      console.log('I have been changed')
+    }
+  }, [type])
+
+  /**
    * React hook to manage debounce of search query
    * @see https://github.com/xnimorz/use-debounce
    */
